@@ -1,0 +1,9 @@
+.form-container{
+    margin: 2em;
+}
+
+.btn.btn-primary{
+    margin: 1em;
+    align-items: center;
+    width: 29%;
+}

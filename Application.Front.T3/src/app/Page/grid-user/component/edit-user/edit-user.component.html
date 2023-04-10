@@ -1,0 +1,41 @@
+<!-- Modal para la edición de usuario -->
+<div class="modal" tabindex="-1" role="dialog" [ngClass]="{'show': mostrarModal, 'd-block': mostrarModal}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">{{modoEdicion ? 'Editar Usuario' : 'Agregar Usuario'}}</h5>
+                <button type="button" class="close" (click)="closedModal()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Formulario de edición de usuario -->
+                <form>
+                    <div class="form-group">
+                      <label for="name">Nombre</label>
+                      <input type="text" [(ngModel)]="usuarioEdit.name" id="name" [ngModelOptions]="{standalone: true}" class="form-control">
+                    </div>
+                  
+                    <div class="form-group">
+                      <label for="birthDate">Fecha de Nacimiento</label>
+                      <input type="date" [(ngModel)]="usuarioEdit.birthDate" id="birthDate" [ngModelOptions]="{standalone: true}" class="form-control">
+                    </div>
+                  
+                    <div class="form-group">
+                      <label for="gender">Género</label>
+                      <select [(ngModel)]="usuarioEdit.gender" id="gender" [ngModelOptions]="{standalone: true}" class="form-control">
+                        <option value="M">Masculino</option>
+                        <option value="F">Femenino</option>
+                      </select>
+                    </div>
+                  
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" (click)="closedModal()">Cancelar</button>
+                        <button type="button" class="btn btn-primary" (click)="onFormSubmit()">Guardar Cambios</button>
+                    </div>
+                  </form>
+                  
+            </div>
+        </div>
+    </div>
+</div>

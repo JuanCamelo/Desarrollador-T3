@@ -1,0 +1,31 @@
+<!-- formulario.component.html -->
+<div class="container mt-4">
+    <button type="button"(click)="navigation()" class="btn btn-outline-secondary">Lista de usarios</button>
+
+    <div class="container mt-4">
+        <h1>Formulario creacion de usuarios</h1>
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group col-md-8">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" [(ngModel)]="formData.name" name="name"
+                    placeholder="Nombre">
+            </div>
+            <div class="form-group col-md-8">
+                <label for="fecha">Fecha:</label>
+                <input type="date" class="form-control" id="fecha" [(ngModel)]="formData.birthDate" name="birthDate">
+            </div>
+            <div class="form-group col-md-8">
+                <label for="genero">Género:</label>
+                <select class="form-control" id="genero" [(ngModel)]="formData.gender" name="gender">
+                    <option value="M">Masculino</option>
+                    <option value="F">Femenino</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+    
+</div>
+
+
+  

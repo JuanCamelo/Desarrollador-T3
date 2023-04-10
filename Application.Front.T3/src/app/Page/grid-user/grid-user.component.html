@@ -1,0 +1,38 @@
+<!-- tabla.component.html -->
+<div class="container mt-5">
+    <button type="button"(click)="navigation()" class="btn btn-outline-secondary">Crear Usuario</button>
+<div class="container mt-5">
+    <h2>Usuarios</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Fecha de N</th>
+                <th>Genero</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let usuario of usuarios">
+                <td>{{usuario.id}}</td>
+                <td>{{usuario.name}}</td>
+                <td>{{usuario.birthDate}}</td>
+                <td>{{usuario.gender}}</td>
+                <td>
+                    <button class="btn btn-sm btn-info" (click)="editarUsuario(usuario)">Editar</button>
+                    <button class="btn btn-sm btn-danger" (click)="eliminarUsuario(usuario)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</div>
+
+<app-edit-user 
+[modoEdicion]="modoEdicion"
+[mostrarModal]="mostrarModal"
+[usuarioEdit]="usuarioEdit"
+(closeModal)="closeModal($event)"
+(statusEdit)="stateOfTheEdition($event)"
+></app-edit-user>
